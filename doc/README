@@ -1,0 +1,6 @@
+IFC4.exp
+	full IFC object model EXPRESS definitions for the IFC4 Release
+ifcXML4.xsd
+	full IFC object model EXPRESS definitions for the IFC4 Release (XML schema)
+formal-10-10-01.pdf
+	Reference Metamodel for the EXPRESS Information Modeling Language Specification Version 1.0 - October 2010
