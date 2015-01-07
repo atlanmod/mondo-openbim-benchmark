@@ -1,0 +1,1 @@
+BIM models can  be downloaded from this [link](https://drive.google.com/file/d/0B-PgPQN6HURHTmlOVTVrWG92c28/view?usp=sharing).
