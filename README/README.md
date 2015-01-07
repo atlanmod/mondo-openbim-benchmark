@@ -5,7 +5,7 @@ It comes also with a set of EMF-compliant BIM (Building Information Model) model
 A BIM model is described using the IFC (Industry Foundation Classes) specification, a freely available format to describe, exchange,
 and share information typically used within the building and facility management industry sector.
 
-## Use cases description (sources are coming soon) 
+## Use cases description
 
 ### Well formedness rules
 This benchmark involves validating the set of well-formedness [rules]() over a given model, model that conforms to the IFC Ecore metamodel
