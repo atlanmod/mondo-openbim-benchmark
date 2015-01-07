@@ -9,7 +9,7 @@ and share information typically used within the building and facility management
 
 ### Well formedness rules
 This benchmark involves validating the set of well-formedness [rules]() over a given model, model that conforms to the IFC Ecore metamodel
-(1). An Ecore metamodel is provided, coming from the open-source [BIMServer](https://github.com/opensourceBIM/BIMserver)project. The well-formedness rules are given in EXPRESS format and are meant to be translated to the query technology under evaluation.
+(1). An Ecore metamodel is provided, coming from the open-source [BIMServer](https://github.com/opensourceBIM/BIMserver) project. The well-formedness rules are given in EXPRESS format and are meant to be translated to the query technology under evaluation.
 
 ### IFC2BIMXML
 This benchmark involves performing the translation of a full IFC model into the BIMXML format.
