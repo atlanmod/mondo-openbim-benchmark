@@ -1,0 +1,1516 @@
+module IfcWallView;
+create OUT : ifc2x3tc1 from IN : ifc2x3tc1;
+-- -------------------------------------------------------------------------------------
+-- =====================Used rules relating to the MVD Standard=========================
+-- -------------------------------------------------------------------------------------
+rule CopyIfcClosedShell {
+ from
+  s : ifc2x3tc1!IfcClosedShell
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcClosedShell)
+  )
+ to
+  t : ifc2x3tc1!IfcClosedShell (
+   CfsFaces <- s.CfsFaces,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcComplexProperty {
+ from
+  s : ifc2x3tc1!IfcComplexProperty
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcComplexProperty)
+  )
+ to
+  t : ifc2x3tc1!IfcComplexProperty (
+   UsageName <- s.UsageName,
+   Name <- s.Name,
+   Description <- s.Description,
+   HasProperties <- s.HasProperties
+  )
+}
+
+rule CopyIfcConnectionCurveGeometry {
+ from
+  s : ifc2x3tc1!IfcConnectionCurveGeometry
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcConnectionCurveGeometry)
+  )
+ to
+  t : ifc2x3tc1!IfcConnectionCurveGeometry (
+   CurveOnRelatingElement <- s.CurveOnRelatingElement,
+   CurveOnRelatedElement <- s.CurveOnRelatedElement
+  )
+}
+
+rule CopyIfcDimensionalExponents {
+ from
+  s : ifc2x3tc1!IfcDimensionalExponents
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcDimensionalExponents)
+  )
+ to
+  t : ifc2x3tc1!IfcDimensionalExponents (
+   LengthExponent <- s.LengthExponent,
+   MassExponent <- s.MassExponent,
+   TimeExponent <- s.TimeExponent,
+   ElectricCurrentExponent <- s.ElectricCurrentExponent,
+   ThermodynamicTemperatureExponent <- s.ThermodynamicTemperatureExponent,
+   AmountOfSubstanceExponent <- s.AmountOfSubstanceExponent,
+   LuminousIntensityExponent <- s.LuminousIntensityExponent
+  )
+}
+
+rule CopyIfcDirection {
+ from
+  s : ifc2x3tc1!IfcDirection
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcDirection)
+  )
+ to
+  t : ifc2x3tc1!IfcDirection (
+   DirectionRatios <- s.DirectionRatios,
+   DirectionRatiosAsString <- s.DirectionRatiosAsString,
+   Dim <- s.Dim,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcDoor {
+ from
+  s : ifc2x3tc1!IfcDoor
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcDoor)
+  )
+ to
+  t : ifc2x3tc1!IfcDoor (
+   OverallHeight <- s.OverallHeight,
+   OverallHeightAsString <- s.OverallHeightAsString,
+   OverallWidth <- s.OverallWidth,
+   OverallWidthAsString <- s.OverallWidthAsString,
+   Tag <- s.Tag,
+   HasStructuralMember <- s.HasStructuralMember,
+   ReferencedInStructures <- s.ReferencedInStructures,
+   Representation <- s.Representation,
+   geometry <- s.geometry,
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcDoorStyle {
+ from
+  s : ifc2x3tc1!IfcDoorStyle
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcDoorStyle)
+  )
+ to
+  t : ifc2x3tc1!IfcDoorStyle (
+   OperationType <- s.OperationType,
+   ConstructionType <- s.ConstructionType,
+   ParameterTakesPrecedence <- s.ParameterTakesPrecedence,
+   Sizeable <- s.Sizeable,
+   RepresentationMaps <- s.RepresentationMaps,
+   Tag <- s.Tag
+  )
+}
+
+rule CopyIfcFaceBound {
+ from
+  s : ifc2x3tc1!IfcFaceBound
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcFaceBound)
+  )
+ to
+  t : ifc2x3tc1!IfcFaceBound (
+   Bound <- s.Bound,
+   Orientation <- s.Orientation,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcFace {
+ from
+  s : ifc2x3tc1!IfcFace
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcFace)
+  )
+ to
+  t : ifc2x3tc1!IfcFace (
+   Bounds <- s.Bounds,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcFaceOuterBound {
+ from
+  s : ifc2x3tc1!IfcFaceOuterBound
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcFaceOuterBound)
+  )
+ to
+  t : ifc2x3tc1!IfcFaceOuterBound (
+   Bound <- s.Bound,
+   Orientation <- s.Orientation,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+rule CopyIfcFacetedBrep {
+ from
+  s : ifc2x3tc1!IfcFacetedBrep
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcFacetedBrep)
+  )
+ to
+  t : ifc2x3tc1!IfcFacetedBrep (
+   Outer <- s.Outer,
+   Dim <- s.Dim,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcGeometricRepresentationContext {
+ from
+  s : ifc2x3tc1!IfcGeometricRepresentationContext
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcGeometricRepresentationContext)
+  )
+ to
+  t : ifc2x3tc1!IfcGeometricRepresentationContext (
+   CoordinateSpaceDimension <- s.CoordinateSpaceDimension,
+   Precision <- s.Precision,
+   PrecisionAsString <- s.PrecisionAsString,
+   WorldCoordinateSystem <- s.WorldCoordinateSystem,
+   TrueNorth <- s.TrueNorth
+  )
+}
+
+rule CopyIfcGeometricSet {
+ from
+  s : ifc2x3tc1!IfcGeometricSet
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcGeometricSet)
+  )
+ to
+  t : ifc2x3tc1!IfcGeometricSet (
+   Elements <- s.Elements,
+   Dim <- s.Dim,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcHalfSpaceSolid {
+ from
+  s : ifc2x3tc1!IfcHalfSpaceSolid
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcHalfSpaceSolid)
+  )
+ to
+  t : ifc2x3tc1!IfcHalfSpaceSolid (
+   BaseSurface <- s.BaseSurface,
+   AgreementFlag <- s.AgreementFlag,
+   Dim <- s.Dim,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcIdentifier {
+ from
+  s : ifc2x3tc1!IfcIdentifier
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcIdentifier)
+  )
+ to
+  t : ifc2x3tc1!IfcIdentifier (
+   wrappedValue <- s.wrappedValue
+  )
+}
+
+rule CopyIfcInteger {
+ from
+  s : ifc2x3tc1!IfcInteger
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcInteger)
+  )
+ to
+  t : ifc2x3tc1!IfcInteger (
+   wrappedValue <- s.wrappedValue
+  )
+}
+
+
+rule CopyIfcLabel {
+ from
+  s : ifc2x3tc1!IfcLabel
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcLabel)
+  )
+ to
+  t : ifc2x3tc1!IfcLabel (
+   wrappedValue <- s.wrappedValue
+  )
+}
+
+rule CopyIfcLengthMeasure {
+ from
+  s : ifc2x3tc1!IfcLengthMeasure
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcLengthMeasure)
+  )
+ to
+  t : ifc2x3tc1!IfcLengthMeasure (
+   wrappedValue <- s.wrappedValue,
+   wrappedValueAsString <- s.wrappedValueAsString
+  )
+}
+
+
+rule CopyIfcLightFixtureType {
+ from
+  s : ifc2x3tc1!IfcLightFixtureType
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcLightFixtureType)
+  )
+ to
+  t : ifc2x3tc1!IfcLightFixtureType (
+   PredefinedType <- s.PredefinedType
+  )
+}
+
+rule CopyIfcLocalPlacement {
+ from
+  s : ifc2x3tc1!IfcLocalPlacement
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcLocalPlacement)
+  )
+ to
+  t : ifc2x3tc1!IfcLocalPlacement (
+   RelativePlacement <- s.RelativePlacement
+  )
+}
+
+rule CopyIfcOpenShell {
+ from
+  s : ifc2x3tc1!IfcOpenShell
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcOpenShell)
+  )
+ to
+  t : ifc2x3tc1!IfcOpenShell (
+   CfsFaces <- s.CfsFaces,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcMeasureWithUnit {
+ from
+  s : ifc2x3tc1!IfcMeasureWithUnit
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcMeasureWithUnit)
+  )
+ to
+  t : ifc2x3tc1!IfcMeasureWithUnit (
+   ValueComponent <- s.ValueComponent,
+   UnitComponent <- s.UnitComponent
+  )
+}
+
+
+rule CopyIfcOpeningElement {
+ from
+  s : ifc2x3tc1!IfcOpeningElement
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcOpeningElement)
+  )
+ to
+  t : ifc2x3tc1!IfcOpeningElement (
+   Tag <- s.Tag,
+   HasStructuralMember <- s.HasStructuralMember,
+   ReferencedInStructures <- s.ReferencedInStructures,
+   Representation <- s.Representation,
+   geometry <- s.geometry,
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcPlane {
+ from
+  s : ifc2x3tc1!IfcPlane
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcPlane)
+  )
+ to
+  t : ifc2x3tc1!IfcPlane (
+   Position <- s.Position,
+   Dim <- s.Dim,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcPlaneAngleMeasure {
+ from
+  s : ifc2x3tc1!IfcPlaneAngleMeasure
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcPlaneAngleMeasure)
+  )
+ to
+  t : ifc2x3tc1!IfcPlaneAngleMeasure (
+   wrappedValue <- s.wrappedValue,
+   wrappedValueAsString <- s.wrappedValueAsString
+  )
+}
+
+rule CopyIfcPolyLoop {
+ from
+  s : ifc2x3tc1!IfcPolyLoop
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcPolyLoop)
+  )
+ to
+  t : ifc2x3tc1!IfcPolyLoop (
+   Polygon <- s.Polygon
+  )
+}
+
+rule CopyIfcPolygonalBoundedHalfSpace {
+ from
+  s : ifc2x3tc1!IfcPolygonalBoundedHalfSpace
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcPolygonalBoundedHalfSpace)
+  )
+ to
+  t : ifc2x3tc1!IfcPolygonalBoundedHalfSpace (
+   Position <- s.Position,
+   PolygonalBoundary <- s.PolygonalBoundary,
+   BaseSurface <- s.BaseSurface,
+   AgreementFlag <- s.AgreementFlag,
+   Dim <- s.Dim,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcPolyline {
+ from
+  s : ifc2x3tc1!IfcPolyline
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcPolyline)
+  )
+ to
+  t : ifc2x3tc1!IfcPolyline (
+   Points <- s.Points,
+   Dim <- s.Dim,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcPositiveLengthMeasure {
+ from
+  s : ifc2x3tc1!IfcPositiveLengthMeasure
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcPositiveLengthMeasure)
+  )
+ to
+  t : ifc2x3tc1!IfcPositiveLengthMeasure (
+   wrappedValue <- s.wrappedValue,
+   wrappedValueAsString <- s.wrappedValueAsString
+  )
+}
+
+rule CopyIfcPresentationStyleAssignment {
+ from
+  s : ifc2x3tc1!IfcPresentationStyleAssignment
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcPresentationStyleAssignment)
+  )
+ to
+  t : ifc2x3tc1!IfcPresentationStyleAssignment (
+   Styles <- s.Styles
+  )
+}
+
+rule CopyIfcProduct {
+ from
+  s : ifc2x3tc1!IfcProduct
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcProduct)
+  )
+ to
+  t : ifc2x3tc1!IfcProduct (
+   Representation <- s.Representation,
+   geometry <- s.geometry,
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcObjectPlacement {
+ from
+  s : ifc2x3tc1!IfcObjectPlacement
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcObjectPlacement)
+  )
+ to
+  t : ifc2x3tc1!IfcObjectPlacement
+}
+
+rule CopyIfcOffsetCurve2D {
+ from
+  s : ifc2x3tc1!IfcOffsetCurve2D
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcOffsetCurve2D)
+  )
+ to
+  t : ifc2x3tc1!IfcOffsetCurve2D (
+   BasisCurve <- s.BasisCurve,
+   Distance <- s.Distance,
+   DistanceAsString <- s.DistanceAsString,
+   SelfIntersect <- s.SelfIntersect,
+   Dim <- s.Dim,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcProductDefinitionShape {
+ from
+  s : ifc2x3tc1!IfcProductDefinitionShape
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcProductDefinitionShape)
+  )
+ to
+  t : ifc2x3tc1!IfcProductDefinitionShape (
+   ShapeOfProduct <- s.ShapeOfProduct
+  )
+}
+
+rule CopyIfcProject {
+ from
+  s : ifc2x3tc1!IfcProject
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcProject)
+  )
+ to
+  t : ifc2x3tc1!IfcProject (
+   LongName <- s.LongName,
+   Phase <- s.Phase,
+   RepresentationContexts <- s.RepresentationContexts,
+   UnitsInContext <- s.UnitsInContext,
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcProperty {
+ from
+  s : ifc2x3tc1!IfcProperty
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcProperty)
+  )
+ to
+  t : ifc2x3tc1!IfcProperty (
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcPropertyDefinition {
+ from
+  s : ifc2x3tc1!IfcPropertyDefinition
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcPropertyDefinition)
+  )
+ to
+  t : ifc2x3tc1!IfcPropertyDefinition (
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+rule CopyIfcSIUnit {
+ from
+  s : ifc2x3tc1!IfcSIUnit
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcSIUnit)
+  )
+ to
+  t : ifc2x3tc1!IfcSIUnit (
+   Prefix <- s.Prefix,
+   Name <- s.Name,
+   Dimensions <- s.Dimensions,
+   UnitType <- s.UnitType
+  )
+}
+
+
+rule CopyIfcSlab {
+ from
+  s : ifc2x3tc1!IfcSlab
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcSlab)
+  )
+ to
+  t : ifc2x3tc1!IfcSlab (
+   PredefinedType <- s.PredefinedType,
+   Tag <- s.Tag,
+   HasStructuralMember <- s.HasStructuralMember,
+   ReferencedInStructures <- s.ReferencedInStructures,
+   Representation <- s.Representation,
+   geometry <- s.geometry,
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcStair {
+ from
+  s : ifc2x3tc1!IfcStair
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcStair)
+  )
+ to
+  t : ifc2x3tc1!IfcStair (
+   ShapeType <- s.ShapeType,
+   Tag <- s.Tag,
+   HasStructuralMember <- s.HasStructuralMember,
+   ReferencedInStructures <- s.ReferencedInStructures,
+   Representation <- s.Representation,
+   geometry <- s.geometry,
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcWindow {
+ from
+  s : ifc2x3tc1!IfcWindow
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcWindow)
+  )
+ to
+  t : ifc2x3tc1!IfcWindow (
+   OverallHeight <- s.OverallHeight,
+   OverallHeightAsString <- s.OverallHeightAsString,
+   OverallWidth <- s.OverallWidth,
+   OverallWidthAsString <- s.OverallWidthAsString,
+   Tag <- s.Tag,
+   HasStructuralMember <- s.HasStructuralMember,
+   ReferencedInStructures <- s.ReferencedInStructures,
+   Representation <- s.Representation,
+   geometry <- s.geometry,
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcWindowStyle {
+ from
+  s : ifc2x3tc1!IfcWindowStyle
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcWindowStyle)
+  )
+ to
+  t : ifc2x3tc1!IfcWindowStyle (
+   ConstructionType <- s.ConstructionType,
+   OperationType <- s.OperationType,
+   ParameterTakesPrecedence <- s.ParameterTakesPrecedence,
+   Sizeable <- s.Sizeable,
+   RepresentationMaps <- s.RepresentationMaps,
+   Tag <- s.Tag
+  )
+}
+
+rule CopyIfcSite {
+ from
+  s : ifc2x3tc1!IfcSite
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcSite)
+  )
+ to
+  t : ifc2x3tc1!IfcSite (
+   RefLatitude <- s.RefLatitude,
+   RefLongitude <- s.RefLongitude,
+   RefElevation <- s.RefElevation,
+   RefElevationAsString <- s.RefElevationAsString,
+   LandTitleNumber <- s.LandTitleNumber,
+   SiteAddress <- s.SiteAddress,
+   LongName <- s.LongName,
+   CompositionType <- s.CompositionType,
+   Representation <- s.Representation,
+   geometry <- s.geometry,
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+
+rule CopyIfcCartesianPoint {
+ from
+  s : ifc2x3tc1!IfcCartesianPoint
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcCartesianPoint)
+  )
+ to
+  t : ifc2x3tc1!IfcCartesianPoint (
+   Coordinates <- s.Coordinates,
+   CoordinatesAsString <- s.CoordinatesAsString,
+   Dim <- s.Dim,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+
+rule CopyIfcCartesianTransformationOperator3D {
+ from
+  s : ifc2x3tc1!IfcCartesianTransformationOperator3D
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcCartesianTransformationOperator3D)
+  )
+ to
+  t : ifc2x3tc1!IfcCartesianTransformationOperator3D (
+   Axis3 <- s.Axis3,
+   Axis1 <- s.Axis1,
+   Axis2 <- s.Axis2,
+   LocalOrigin <- s.LocalOrigin,
+   Scale <- s.Scale,
+   ScaleAsString <- s.ScaleAsString,
+   Dim <- s.Dim,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcBuildingElement {
+ from
+  s : ifc2x3tc1!IfcBuildingElement
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcBuildingElement)
+  )
+ to
+  t : ifc2x3tc1!IfcBuildingElement (
+   Tag <- s.Tag,
+   HasStructuralMember <- s.HasStructuralMember,
+   ReferencedInStructures <- s.ReferencedInStructures,
+   Representation <- s.Representation,
+   geometry <- s.geometry,
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcBuildingElementPart {
+ from
+  s : ifc2x3tc1!IfcBuildingElementPart
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcBuildingElementPart)
+  )
+ to
+  t : ifc2x3tc1!IfcBuildingElementPart
+}
+
+rule CopyIfcBuildingElementProxy {
+ from
+  s : ifc2x3tc1!IfcBuildingElementProxy
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcBuildingElementProxy)
+  )
+ to
+  t : ifc2x3tc1!IfcBuildingElementProxy (
+   CompositionType <- s.CompositionType,
+   Tag <- s.Tag,
+   HasStructuralMember <- s.HasStructuralMember,
+   ReferencedInStructures <- s.ReferencedInStructures,
+   Representation <- s.Representation,
+   geometry <- s.geometry,
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+
+
+
+rule CopyIfcBoundingBox {
+ from
+  s : ifc2x3tc1!IfcBoundingBox
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcBoundingBox)
+  )
+ to
+  t : ifc2x3tc1!IfcBoundingBox (
+   Corner <- s.Corner,
+   XDim <- s.XDim,
+   XDimAsString <- s.XDimAsString,
+   YDim <- s.YDim,
+   YDimAsString <- s.YDimAsString,
+   ZDim <- s.ZDim,
+   ZDimAsString <- s.ZDimAsString,
+   Dim <- s.Dim,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcBoolean {
+ from
+  s : ifc2x3tc1!IfcBoolean
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcBoolean)
+  )
+ to
+  t : ifc2x3tc1!IfcBoolean (
+   wrappedValue <- s.wrappedValue
+  )
+}
+
+rule CopyIfcBooleanClippingResult {
+ from
+  s : ifc2x3tc1!IfcBooleanClippingResult
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcBooleanClippingResult)
+  )
+ to
+  t : ifc2x3tc1!IfcBooleanClippingResult (
+   Operator <- s.Operator,
+   FirstOperand <- s.FirstOperand,
+   SecondOperand <- s.SecondOperand,
+   Dim <- s.Dim,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcBooleanResult {
+ from
+  s : ifc2x3tc1!IfcBooleanResult
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcBooleanResult)
+  )
+ to
+  t : ifc2x3tc1!IfcBooleanResult (
+   Operator <- s.Operator,
+   FirstOperand <- s.FirstOperand,
+   SecondOperand <- s.SecondOperand,
+   Dim <- s.Dim,
+   LayerAssignments <- s.LayerAssignments,
+   StyledByItem <- s.StyledByItem
+  )
+}
+
+rule CopyIfcPerson {
+ from
+  s : ifc2x3tc1!IfcPerson
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcPerson)
+  )
+ to
+  t : ifc2x3tc1!IfcPerson (
+   Id <- s.Id,
+   FamilyName <- s.FamilyName,
+   GivenName <- s.GivenName,
+   MiddleNames <- s.MiddleNames,
+   PrefixTitles <- s.PrefixTitles,
+   SuffixTitles <- s.SuffixTitles,
+   Roles <- s.Roles
+  )
+}
+
+rule CopyIfcPersonAndOrganization {
+ from
+  s : ifc2x3tc1!IfcPersonAndOrganization
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcPersonAndOrganization)
+  )
+ to
+  t : ifc2x3tc1!IfcPersonAndOrganization (
+   Roles <- s.Roles
+  )
+}
+
+rule CopyIfcWall {
+ from
+  s : ifc2x3tc1!IfcWall
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcWall)
+  )
+ to
+  t : ifc2x3tc1!IfcWall (
+   Tag <- s.Tag,
+   HasStructuralMember <- s.HasStructuralMember,
+   ReferencedInStructures <- s.ReferencedInStructures,
+   Representation <- s.Representation,
+   geometry <- s.geometry,
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description,
+   ConnectedTo <- s.ConnectedTo,
+   ConnectedFrom <- s.ConnectedFrom, 
+   ObjectPlacement <- s.ObjectPlacement
+  )
+}
+
+rule CopyIfcWallStandardCase {
+ from
+  s : ifc2x3tc1!IfcWallStandardCase
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcWallStandardCase)
+  )
+ to
+  t : ifc2x3tc1!IfcWallStandardCase (
+   Tag <- s.Tag,
+   HasStructuralMember <- s.HasStructuralMember,
+   ReferencedInStructures <- s.ReferencedInStructures,
+   Representation <- s.Representation,
+   geometry <- s.geometry,
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description, 
+   ConnectedTo <- s.ConnectedTo,
+   ConnectedFrom <- s.ConnectedFrom, 
+   ObjectPlacement <- s.ObjectPlacement
+  )
+}
+
+rule CopyIfcOwnerHistory {
+ from
+  s : ifc2x3tc1!IfcOwnerHistory
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcOwnerHistory)
+  )
+ to
+  t : ifc2x3tc1!IfcOwnerHistory (
+   OwningUser <- s.OwningUser,
+   OwningApplication <- s.OwningApplication,
+   ChangeAction <- s.ChangeAction,
+   LastModifiedDate <- s.LastModifiedDate,
+   CreationDate <- s.CreationDate
+  )
+}
+
+rule CopyIfcActorRole {
+ from
+  s : ifc2x3tc1!IfcActorRole
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcActorRole)
+  )
+ to
+  t : ifc2x3tc1!IfcActorRole (
+   Role <- s.Role,
+   UserDefinedRole <- s.UserDefinedRole,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcAddress {
+ from
+  s : ifc2x3tc1!IfcAddress
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcAddress)
+  )
+ to
+  t : ifc2x3tc1!IfcAddress (
+   Purpose <- s.Purpose,
+   Description <- s.Description,
+   UserDefinedPurpose <- s.UserDefinedPurpose
+  )
+}
+
+rule CopyIfcObject {
+ from
+  s : ifc2x3tc1!IfcObject
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcObject)
+  )
+ to
+  t : ifc2x3tc1!IfcObject (
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcObjectDefinition {
+ from
+  s : ifc2x3tc1!IfcObjectDefinition
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcObjectDefinition)
+  )
+ to
+  t : ifc2x3tc1!IfcObjectDefinition (
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcRelationship {
+ from
+  s : ifc2x3tc1!IfcRelationship
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcRelationship)
+  )
+ to
+  t : ifc2x3tc1!IfcRelationship (
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcRelAssigns {
+ from
+  s : ifc2x3tc1!IfcRelAssigns
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcRelAssigns)
+  )
+ to
+  t : ifc2x3tc1!IfcRelAssigns (
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcRelAssignsToActor {
+ from
+  s : ifc2x3tc1!IfcRelAssignsToActor
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcRelAssignsToActor)
+  )
+ to
+  t : ifc2x3tc1!IfcRelAssignsToActor (
+   RelatingActor <- s.RelatingActor,
+   ActingRole <- s.ActingRole,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcRelAssignsToControl {
+ from
+  s : ifc2x3tc1!IfcRelAssignsToControl
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcRelAssignsToControl)
+  )
+ to
+  t : ifc2x3tc1!IfcRelAssignsToControl (
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description,
+   Relatingcontrol <- s.RelatingControl
+  )
+}
+
+rule CopyIfcRelAssignsToGroup {
+ from
+  s : ifc2x3tc1!IfcRelAssignsToGroup
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcRelAssignsToGroup)
+  )
+ to
+  t : ifc2x3tc1!IfcRelAssignsToGroup (
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description,
+   RelatingGroup <- if ( not (
+   		 (s.RelatingGroup.oclIsTypeOf(ifc2x3tc1!IfcElectricalCircuit)) 
+		 or 
+		 (s.RelatingGroup.oclIsTypeOf(ifc2x3tc1!IfcZone)) 
+		 )) 
+   					then s.RelatingGroup
+		 			
+					else OclUndefined
+					
+					endif
+  )
+}
+
+rule CopyIfcRelAssignsToProcess {
+ from
+  s : ifc2x3tc1!IfcRelAssignsToProcess
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcRelAssignsToProcess)
+  )
+ to
+  t : ifc2x3tc1!IfcRelAssignsToProcess (
+   QuantityInProcess <- s.QuantityInProcess,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description,
+   RelatingProcess <- s.RelatingProcess
+   
+  )
+}
+
+rule CopyIfcRelAssignsToProduct {
+ from
+  s : ifc2x3tc1!IfcRelAssignsToProduct
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcRelAssignsToProduct)
+  )
+ to
+  t : ifc2x3tc1!IfcRelAssignsToProduct (
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description,
+   RelatingProduct <- s.RelatingProduct
+  )
+}
+
+rule CopyIfcRelAssignsToResource {
+ from
+  s : ifc2x3tc1!IfcRelAssignsToResource
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcRelAssignsToResource)
+  )
+ to
+  t : ifc2x3tc1!IfcRelAssignsToResource (
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description,
+   RelatingResource <- s.RelatingResource
+  )
+}
+
+rule CopyIfcRelAssociates {
+	from s : ifc2x3tc1!IfcRelAssociates 
+	(
+	 s.oclIsTypeOf(ifc2x3tc1!IfcRelAssociates)	
+	)
+	to t : ifc2x3tc1!IfcRelAssociates 
+	(
+	  GlobalId <- s.GlobalId,
+      OwnerHistory <- s.OwnerHistory,
+      Name <- s.Name,
+      Description <- s.Description
+	)
+}
+
+rule CopyIfcRelAssociatesMaterial {
+ from
+  s : ifc2x3tc1!IfcRelAssociatesMaterial
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcRelAssociatesMaterial)
+  )
+ to
+  t : ifc2x3tc1!IfcRelAssociatesMaterial (
+   RelatingMaterial <- if (not (
+   		(s.oclIsTypeOf(ifc2x3tc1!IfcMaterial)) 
+		or (s.oclIsTypeOf(ifc2x3tc1!IfcMaterialLayerSet)) 
+		or (s.oclIsTypeOf(ifc2x3tc1!IfcMaterialLayer))
+			)
+		)
+	then s.RelatingMaterial 
+	
+	else OclUndefined
+	
+	endif
+	)
+}
+
+rule CopyIfcMaterial {
+ from
+  s : ifc2x3tc1!IfcMaterial
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcMaterial)
+  )
+ to
+  t : ifc2x3tc1!IfcMaterial (
+   Name <- s.Name
+  )
+}
+
+rule CopyIfcMaterialClassificationRelationship {
+ from
+  s : ifc2x3tc1!IfcMaterialClassificationRelationship
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcMaterialClassificationRelationship)
+  )
+ to
+  t : ifc2x3tc1!IfcMaterialClassificationRelationship (
+   MaterialClassifications <- s.MaterialClassifications
+   --ClassifiedMaterial <- s.ClassifiedMaterial
+  )
+}
+
+rule CopyIfcMaterialDefinitionRepresentation {
+ from
+  s : ifc2x3tc1!IfcMaterialDefinitionRepresentation
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcMaterialDefinitionRepresentation)
+  )
+ to
+  t : ifc2x3tc1!IfcMaterialDefinitionRepresentation (
+   RepresentedMaterial <- s.RepresentedMaterial
+  )
+}
+
+rule CopyIfcMaterialLayer {
+ from
+  s : ifc2x3tc1!IfcMaterialLayer
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcMaterialLayer)
+  )
+ to
+  t : ifc2x3tc1!IfcMaterialLayer (
+   Material <- s.Material,
+   LayerThickness <- s.LayerThickness,
+  -- LayerThicknessAsString <- s.LayerThicknessAsString,
+   IsVentilated <- s.IsVentilated
+  )
+}
+rule CopyIfcRelDefines {
+ from
+  s : ifc2x3tc1!IfcRelDefines
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcRelDefines)
+  )
+ to
+  t : ifc2x3tc1!IfcRelDefines (
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcRelDefinesByProperties {
+ from
+  s : ifc2x3tc1!IfcRelDefinesByProperties
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcRelDefinesByProperties)
+  )
+ to
+  t : ifc2x3tc1!IfcRelDefinesByProperties (
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description, 
+   RelatingPropertyDefinition <- if (s.RelatingPropertyDefinition.oclIsTypeOf(ifc2x3tc1!IfcPropertySet))
+   								 then s.RelatingPropertyDefinition 
+								 else OclUndefined 
+								 endif
+  )
+}
+
+rule CopyIfcRelDefinesByType {
+ from
+  s : ifc2x3tc1!IfcRelDefinesByType
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcRelDefinesByType)
+  )
+ to
+  t : ifc2x3tc1!IfcRelDefinesByType (
+--   RelatingType <- s.RelatingType,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+
+rule CopyIfcMaterialLayerSet {
+ from
+  s : ifc2x3tc1!IfcMaterialLayerSet
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcMaterialLayerSet)
+  )
+ to
+  t : ifc2x3tc1!IfcMaterialLayerSet (
+   LayerSetName <- s.LayerSetName,
+   TotalThickness <- s.TotalThickness
+  -- TotalThicknessAsString <- s.TotalThicknessAsString
+  )
+}
+
+rule CopyIfcMaterialLayerSetUsage {
+ from
+  s : ifc2x3tc1!IfcMaterialLayerSetUsage
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcMaterialLayerSetUsage)
+  )
+ to
+  t : ifc2x3tc1!IfcMaterialLayerSetUsage (
+   ForLayerSet <- s.ForLayerSet,
+   LayerSetDirection <- s.LayerSetDirection,
+   DirectionSense <- s.DirectionSense,
+   OffsetFromReferenceLine <- s.OffsetFromReferenceLine
+  -- OffsetFromReferenceLineAsString <- s.OffsetFromReferenceLineAsString
+  )
+}
+
+rule CopyIfcMaterialList {
+ from
+  s : ifc2x3tc1!IfcMaterialList
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcMaterialList)
+  )
+ to
+  t : ifc2x3tc1!IfcMaterialList (
+   Materials <- s.Materials
+   
+  )
+}
+
+
+rule CopyIfcClassificationNotation {
+ from
+  s : ifc2x3tc1!IfcClassificationNotation
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcClassificationNotation)
+  )
+ to
+  t : ifc2x3tc1!IfcClassificationNotation (
+   NotationFacets <- s.NotationFacets
+  )
+}
+
+rule CopyIfcClassificationNotationFacet {
+ from
+  s : ifc2x3tc1!IfcClassificationNotationFacet
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcClassificationNotationFacet)
+  )
+ to
+  t : ifc2x3tc1!IfcClassificationNotationFacet (
+   NotationValue <- s.NotationValue
+  )
+}
+
+rule CopyIfcPropertySet {
+ from
+  s : ifc2x3tc1!IfcPropertySet
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcPropertySet)
+  )
+ to
+  t : ifc2x3tc1!IfcPropertySet (
+   HasProperties <- s.HasProperties,
+   DefinesType <- s.DefinesType,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcPropertySetDefinition {
+ from
+  s : ifc2x3tc1!IfcPropertySetDefinition
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcPropertySetDefinition)
+  )
+ to
+  t : ifc2x3tc1!IfcPropertySetDefinition (
+   DefinesType <- s.DefinesType,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+
+
+
+rule CopyIfcPropertySingleValue {
+ from
+  s : ifc2x3tc1!IfcPropertySingleValue
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcPropertySingleValue)
+  )
+ to
+  t : ifc2x3tc1!IfcPropertySingleValue (
+   NominalValue <- s.NominalValue,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
+
+rule CopyIfcTypeProduct {
+ from
+  s : ifc2x3tc1!IfcTypeProduct
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcTypeProduct)
+  )
+ to
+  t : ifc2x3tc1!IfcTypeProduct (
+   RepresentationMaps <- s.RepresentationMaps,
+   Tag <- s.Tag
+  )
+}
+
+rule CopyIfcElementType {
+ from
+  s : ifc2x3tc1!IfcElementType
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcElementType)
+  )
+ to
+  t : ifc2x3tc1!IfcElementType (
+   ElementType <- s.ElementType,
+   --RepresentationMaps <- s.RepresentationMaps,
+   Tag <- s.Tag
+  )
+}
+
+rule CopyIfcRepresentationMap {
+ from
+  s : ifc2x3tc1!IfcRepresentationMap
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcRepresentationMap)
+  )
+ to
+  t : ifc2x3tc1!IfcRepresentationMap (
+   MappingOrigin <- s.MappingOrigin
+   --MappedRepresentation <- s.MappedRepresentation
+  )
+}
+
+
+rule CopyIfcAreaMeasure { 
+ from
+  s : ifc2x3tc1!IfcAreaMeasure
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcAreaMeasure)
+  )
+ to
+  t : ifc2x3tc1!IfcAreaMeasure (
+   wrappedValue <- s.wrappedValue,
+   wrappedValueAsString <- s.wrappedValueAsString
+  )
+}
+
+rule CopyIfcBuilding {
+ from
+  s : ifc2x3tc1!IfcBuilding
+  (
+   s.oclIsTypeOf(ifc2x3tc1!IfcBuilding)
+  )
+ to
+  t : ifc2x3tc1!IfcBuilding (
+   ElevationOfRefHeight <- s.ElevationOfRefHeight,
+   ElevationOfRefHeightAsString <- s.ElevationOfRefHeightAsString,
+   ElevationOfTerrain <- s.ElevationOfTerrain,
+   ElevationOfTerrainAsString <- s.ElevationOfTerrainAsString,
+   BuildingAddress <- s.BuildingAddress,
+   LongName <- s.LongName,
+   CompositionType <- s.CompositionType,
+   Representation <- s.Representation,
+   geometry <- s.geometry,
+   ObjectType <- s.ObjectType,
+   IsDefinedBy <- s.IsDefinedBy,
+   HasAssignments <- s.HasAssignments,
+   HasAssociations <- s.HasAssociations,
+   GlobalId <- s.GlobalId,
+   OwnerHistory <- s.OwnerHistory,
+   Name <- s.Name,
+   Description <- s.Description
+  )
+}
