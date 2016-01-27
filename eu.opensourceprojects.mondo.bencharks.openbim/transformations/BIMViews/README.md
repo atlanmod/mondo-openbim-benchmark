@@ -10,4 +10,4 @@ metamodel by (i) copying the full IFC metamodel, (ii) removing the metaclasses t
 2. In a second automated step a Higher-Order Transformation from related work ([ATL2Copier](http://www.eclipse.org/atl/atlTransformations/KM32ATLCopier/KM32ATLCopier.zip)) is used to automatically generate, from the view metamodel a view transformation. The resulting view transformation, given a full model conforming to the full IFC metamodel filters out the elements that do not belong to the view.
 
 
-The *BIMCopier.atl* transformation contains the rules to copy any given bim model into another, while the *IfcWallView.atl* copies only elements belonging to the [IFCWALL-VIEW](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcsharedbldgelements/lexical/ifcwallstandardcase.htm). 
+The **BIMCopier.atl** transformation contains the rules to copy any given bim model into another, while the **IfcWallView.atl** copies only elements belonging to the [IFCWALL-VIEW](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcsharedbldgelements/lexical/ifcwallstandardcase.htm). 
