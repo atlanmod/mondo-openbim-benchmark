@@ -7,4 +7,4 @@ follow a two-step approach, that users may replicate for future views on BIM on 
 1. In a first manual step we produce the view metamodel. MVD specifications enumerate BIM concepts, grouping them by concerns. We select one or more concerns and we create a view
 metamodel by (i) copying the full IFC metamodel, (ii) removing the metaclasses that do not appear in the concern.
 
-2. In a second automated step a Higher-Order Transformation from related work (ATL2Copier) is used to automatically generate, from the view metamodel a view transformation. The resulting view transformation, given a full model conforming to the full IFC metamodel filters out the elements that do not belong to the view.
+2. In a second automated step a Higher-Order Transformation from related work ([ATL2Copier](http://www.eclipse.org/atl/atlTransformations/KM32ATLCopier/KM32ATLCopier.zip)) is used to automatically generate, from the view metamodel a view transformation. The resulting view transformation, given a full model conforming to the full IFC metamodel filters out the elements that do not belong to the view.
